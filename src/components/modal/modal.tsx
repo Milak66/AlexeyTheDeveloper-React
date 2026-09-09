@@ -39,7 +39,7 @@ const Modal: React.FC<ModalProps> = () => {
     try {
       dispatch(onSetDataLoading());
 
-      const response = await fetch("http://localhost:8666/sendMessage", {
+      const response = await fetch("https://telegrammessage-java.onrender.com/sendMessage", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
