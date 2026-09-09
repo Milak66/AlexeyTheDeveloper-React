@@ -2,14 +2,14 @@ import React from "react";
 import './modal.css';
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
-import { onOpenAutorModal, setUserData, onSetDataLoading } from "../reduser/reduser";
+import { onOpenAutorModal, setMessage, onSetDataLoading } from "../reduser/reduser";
 
 interface ModalProps {} 
 
 const Modal: React.FC<ModalProps> = () => {
   const textLang = useSelector((state: RootState) => state.aleksey.textLang); 
   const dispatch = useDispatch(); 
-  const userData = useSelector((state: RootState) => state.aleksey.userData);
+  const message = useSelector((state: RootState) => state.aleksey.message);
   const sendDataLoading = useSelector((state: RootState) => state.aleksey.sendDataLoading);
 
   const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -31,7 +31,7 @@ const Modal: React.FC<ModalProps> = () => {
   const sendData = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!userData.trim()) {
+    if (!message.trim()) {
       alert(textLang.noTextMessage);
       return;
     }
@@ -39,12 +39,12 @@ const Modal: React.FC<ModalProps> = () => {
     try {
       dispatch(onSetDataLoading());
 
-      const response = await fetch("https://aleksey-api.onrender.com/getData", {
+      const response = await fetch("http://localhost:8666/sendMessage", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ userData }),
+        body: JSON.stringify({ message }),
       });
 
       if (!response.ok) {
@@ -75,7 +75,7 @@ const Modal: React.FC<ModalProps> = () => {
           className="textForEmail"
           name="username"
           placeholder={textLang.inputText}
-          onChange={(e) => dispatch(setUserData(e.target.value))}
+          onChange={(e) => dispatch(setMessage(e.target.value))}
         />
         <div className="dataLoadingText">{handleSetDataLoading()}</div>
         <button className="btnSubmit" type="submit">

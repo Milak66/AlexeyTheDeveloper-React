@@ -13,7 +13,7 @@ interface InitialState {
     openAutorModal: boolean;
     openImgModal: boolean;
     imgUrl: string;
-    userData: string;
+    message: string;
     sendDataLoading: boolean;
 }
 
@@ -25,8 +25,8 @@ const initialState: InitialState = {
     openMenuModal: false,
     openAutorModal: false,
     openImgModal: false,
-    imgUrl: '',
-    userData: '',
+    imgUrl: "",
+    message: "",
     sendDataLoading: false
 }
 
@@ -66,8 +66,8 @@ const alekseyReducer = createSlice({
      onWriteImgUrl: (state, action: PayloadAction<string>) => {
       state.imgUrl = action.payload;
      },
-     setUserData: (state, action: PayloadAction<string>) => {
-        state.userData = action.payload;
+     setMessage: (state, action: PayloadAction<string>) => {
+        state.message = action.payload;
      },
      onSetDataLoading: (state) => {
       state.sendDataLoading = !state.sendDataLoading;
@@ -85,7 +85,7 @@ export const {
    onOpenAutorModal,
    onOpenImgModal,
    onWriteImgUrl,
-   setUserData,
+   setMessage,
    onSetDataLoading
 } = alekseyReducer.actions;
 
