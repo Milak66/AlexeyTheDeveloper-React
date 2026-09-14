@@ -350,7 +350,7 @@
     height: 18vw;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url(/src/assets/work1.png);
+    background-image: url(/src/assets/plansForToday.jpg);
 }
 
 .workContent2 {
@@ -358,7 +358,7 @@
     height: 18vw;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url(/src/assets/work2.png);
+    background-image: url(/src/assets/funChatPhoto.jpg);
 }
 
 @media all and (max-width: 768px) {

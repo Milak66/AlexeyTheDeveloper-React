@@ -448,21 +448,21 @@ const Main: React.FC<MainProps> = () => {
                 </div>
               </div>
               <div className="portfolioWorks">
-                <div className="work">
-                <a className="link" href="https://click-race-nine.vercel.app" target="blank">
+              <div className="work">
+                <a className="link" href="https://plans-for-today.vercel.app" target="blank">
                   <div className="workContent1">
                   </div>
                   <div className="workTitle">
-                    Click race
+                    Plans for today
                   </div>
                   </a>
                 </div>
                 <div className="work">
-                <a className="link" href="https://plans-for-today.vercel.app" target="blank">
+                <a className="link" href="https://funchat-ochre.vercel.app" target="blank">
                   <div className="workContent2">
                   </div>
                   <div className="workTitle">
-                    Plans for today
+                    FunChat(Messenger)
                   </div>
                   </a>
                 </div>
