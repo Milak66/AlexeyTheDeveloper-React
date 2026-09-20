@@ -17,11 +17,9 @@ const App: React.FC<AppProps> = (): React.JSX.Element => {
 
     const openAutorModal = useSelector((state: RootState) => state.aleksey.openAutorModal);
 
-    const openImgModal = useSelector((state: RootState) => state.aleksey.openImgModal);
-
     useEffect(() => {
     
-        if (openAutorModal || openImgModal) {
+        if (openAutorModal) {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "";
