@@ -3,9 +3,6 @@ import './main.css';
 import { onOpenAutorModal, onOpenImgModal, onWriteImgUrl} from "../reduser/reduser";
 import { RootState, AppDispatch } from "../store/store";
 import { useSelector, useDispatch } from "react-redux";
-import plainWork1 from '../../assets/plainWork1.png';
-import plainWork2 from '../../assets/plainWork2.png';
-import plainWork3 from '../../assets/plainWork3.png';
 import htmlPic from '../../assets/html.png';
 import cssPic from '../../assets/css.png';
 import jsPic from '../../assets/js.png';
@@ -421,31 +418,10 @@ const Main: React.FC<MainProps> = () => {
             </div>
             </div>
             <div className="portfolio">
-            {openImgModal && <ImgModal/>}
               <div className="portfolioTitle">
               <div className="prtTitle">
                 {textLang.portfolioTitle}
               </div>
-              </div>
-              <div className="portfolioPlainWorks">
-                <div className="plainWork" onClick={() => {
-                  handleOpenImgModal();
-                  handleWriteImgUrl(plainWork1);
-                  }}>
-                  <img className="plainImg" src={plainWork1} alt="" />
-                </div>
-                <div className="plainWork" onClick={() => {
-                  handleOpenImgModal();
-                  handleWriteImgUrl(plainWork2);
-                  }}>
-                  <img className="plainImg" src={plainWork2} alt="" />
-                </div>
-                <div className="plainWork" onClick={() => {
-                  handleOpenImgModal();
-                  handleWriteImgUrl(plainWork3);
-                  }}>
-                  <img className="plainImg" src={plainWork3} alt="" />
-                </div>
               </div>
               <div className="portfolioWorks">
               <div className="work">
@@ -462,7 +438,7 @@ const Main: React.FC<MainProps> = () => {
                   <div className="workContent2">
                   </div>
                   <div className="workTitle">
-                    FunChat(Messenger)
+                    FunChat
                   </div>
                   </a>
                 </div>
