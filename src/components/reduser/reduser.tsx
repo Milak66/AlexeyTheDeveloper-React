@@ -11,7 +11,6 @@ interface InitialState {
     openLangModal: boolean,
     openMenuModal: boolean;
     openAutorModal: boolean;
-    openImgModal: boolean;
     imgUrl: string;
     message: string;
     sendDataLoading: boolean;
@@ -24,7 +23,6 @@ const initialState: InitialState = {
     openLangModal: false,
     openMenuModal: false,
     openAutorModal: false,
-    openImgModal: false,
     imgUrl: "",
     message: "",
     sendDataLoading: false
@@ -60,12 +58,6 @@ const alekseyReducer = createSlice({
      onOpenAutorModal: (state) => {
         state.openAutorModal = !state.openAutorModal;
      },
-     onOpenImgModal: (state) => {
-      state.openImgModal = !state.openImgModal;
-     },
-     onWriteImgUrl: (state, action: PayloadAction<string>) => {
-      state.imgUrl = action.payload;
-     },
      setMessage: (state, action: PayloadAction<string>) => {
         state.message = action.payload;
      },
@@ -83,8 +75,6 @@ export const {
    onOpenLangModal,
    onOpenMenuModal,
    onOpenAutorModal,
-   onOpenImgModal,
-   onWriteImgUrl,
    setMessage,
    onSetDataLoading
 } = alekseyReducer.actions;

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import './main.css';
-import { onOpenAutorModal, onOpenImgModal, onWriteImgUrl} from "../reduser/reduser";
+import { onOpenAutorModal } from "../reduser/reduser";
 import { RootState, AppDispatch } from "../store/store";
 import { useSelector, useDispatch } from "react-redux";
 import htmlPic from '../../assets/html.png';
@@ -18,10 +18,6 @@ const Main: React.FC<MainProps> = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const textLang = useSelector((state: RootState) => state.aleksey.textLang);
-
-  const openImgModal = useSelector((state: RootState) => state.aleksey.openImgModal);
-
-  const imgUrl = useSelector((state: RootState) => state.aleksey.imgUrl);
 
   useEffect(() => {
     const slider = document.querySelector('.slider') as HTMLDivElement | null;
@@ -296,33 +292,6 @@ const Main: React.FC<MainProps> = () => {
     dispatch(onOpenAutorModal());
   }
 
-  function handleOpenImgModal() {
-    dispatch(onOpenImgModal());
-  }
-
-  function handleCloseImgModal(e: React.MouseEvent<HTMLDivElement>) {
-    if (e.target === e.currentTarget) {
-      dispatch(onOpenImgModal());
-    }
-  }
-
-  interface ImgProps {};
-
-  const ImgModal: React.FC<ImgProps> = () => {
-
-    return (
-      <div className="imgModalPlace" onClick={handleCloseImgModal}>
-        <div className="imgModal">
-          <img className="imgModalPic" src={imgUrl} alt="" />
-        </div>
-      </div>
-    )
-  }
-
-  function handleWriteImgUrl(img: string) {
-    dispatch(onWriteImgUrl(img))
-  }
-  
   return (
     <div className="main">
       <div className="purpleBlocks1">
