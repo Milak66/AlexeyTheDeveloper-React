@@ -3,7 +3,7 @@ import './start.css';
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store/store";
 import { changeLang, writeText, appendChar, onOpenLangModal, onOpenMenuModal } from "../reduser/reduser";
-import planet from '../../assets/planet.png';
+import planet from '../../assets/planet.jpg';
 
 interface StartProps {} 
 
