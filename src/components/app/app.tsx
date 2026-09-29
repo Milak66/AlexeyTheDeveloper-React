@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './app.css';
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import Loading from "../loading/loading";
