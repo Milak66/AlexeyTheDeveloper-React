@@ -410,7 +410,7 @@ const Main: React.FC<MainProps> = () => {
                 <a className="link" href="https://funchat-ochre.vercel.app" target="blank">
                 <img className="projectImage" src={project2} alt="" />
                   <div className="workTitle">
-                    FunChat
+                    FunChat(messenger)
                   </div>
                   </a>
                 </div>
