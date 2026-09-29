@@ -18,10 +18,6 @@
 .loadingText {
     font-size: 2.5vw;
     color: #b14cff;
-
-    text-shadow:
-        0 0 8px rgba(177, 76, 255, 0.45),
-        0 0 25px rgba(0, 180, 255, 0.18);
 }
 
 @media all and (max-width: 768px) {

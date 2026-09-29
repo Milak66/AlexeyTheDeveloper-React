@@ -11,6 +11,10 @@ import reactPic from '../../assets/react.png';
 import reduxPic from '../../assets/redux.png';
 import javaPic from '../../assets/java.jpg';
 import springBoot from '../../assets/springBoot.png';
+import project1 from '../../assets/plansForToday.jpg';
+import project2 from '../../assets/funChat.jpg';
+import project3 from '../../assets/clickRace.jpg';
+import project4 from '../../assets/translator.jpg';
 
 interface MainProps {} 
 
@@ -393,10 +397,10 @@ const Main: React.FC<MainProps> = () => {
               </div>
               </div>
               <div className="portfolioWorks">
+              <div className="works">
               <div className="work">
                 <a className="link" href="https://plans-for-today.vercel.app" target="blank">
-                  <div className="workContent1">
-                  </div>
+                <img className="projectImage" src={project1} alt="" />
                   <div className="workTitle">
                     Plans for today
                   </div>
@@ -404,13 +408,31 @@ const Main: React.FC<MainProps> = () => {
                 </div>
                 <div className="work">
                 <a className="link" href="https://funchat-ochre.vercel.app" target="blank">
-                  <div className="workContent2">
-                  </div>
+                <img className="projectImage" src={project2} alt="" />
                   <div className="workTitle">
                     FunChat
                   </div>
                   </a>
                 </div>
+                </div>
+                <div className="works">
+                <div className="work">
+                <a className="link" href="https://click-race-nine.vercel.app" target="blank">
+                <img className="projectImage" src={project3} alt="" />
+                  <div className="workTitle">
+                    Click race
+                  </div>
+                  </a>
+                </div>
+                <div className="work">
+                <a className="link" href="https://translator-psi-lilac.vercel.app" target="blank">
+                <img className="projectImage" src={project4} alt="" />
+                  <div className="workTitle">
+                    Translator
+                  </div>
+                  </a>
+                </div>
+              </div>
               </div>
             </div>
           </div>

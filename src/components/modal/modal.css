@@ -1,127 +1,241 @@
 .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
     display: flex;
     justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
+    align-items: flex-start;
+
     width: 100%;
     height: 100%;
+
+    padding: 1vw;
+    box-sizing: border-box;
+
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
 }
-  
+
 .modalValue {
-    width: 45vw;
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: min(45vw, 700px);
+    min-height: 28vw;
     margin-top: 1vw;
-    height: 28vw;
-    position: relative;
+    padding: 2vw;
+
+    box-sizing: border-box;
+
     background-color: rgb(234, 234, 234);
-    border: 1.5px #b14cff solid;
-    border-radius: 2vw;
+
+    border: 1.5px solid #b14cff;
+    border-radius: clamp(15px, 2vw, 30px);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(177, 76, 255, 0.1);
 }
-  
+
 .form {
     display: flex;
-    height: 25vw;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    width: 100%;
+    min-height: 25vw;
+
+    gap: 1.5vw;
 }
-  
+
 .textToUser {
+    width: 100%;
     text-align: center;
+    line-height: 1.4;
 }
-  
-.normalTextToUser {
-    font-size: 1.5vw;
-}
-  
-.smallTextToUser {
-  font-size: 1.5vw;
+
+.normalTextToUser,
+.smallTextToUser,
+.textToUserToHelp {
+    font-size: clamp(16px, 1.5vw, 23px);
 }
 
 .textToUserToHelp {
-  font-size: 1.5vw;
-  text-align: center;
+    text-align: center;
+    line-height: 1.5;
 }
-  
+
 .textForEmail {
-      width: 30vw;
-      height: 7vw;
-      resize: none;
-      font-size: 1.3vw;
+    width: min(30vw, 500px);
+    height: clamp(100px, 7vw, 150px);
+
+    padding: 1vw;
+
+    box-sizing: border-box;
+
+    resize: vertical;
+
+    font-family: inherit;
+    font-size: clamp(15px, 1.3vw, 20px);
+    line-height: 1.5;
+
+    background-color: white;
+
+    border: 1.5px solid #b14cff;
+    border-radius: clamp(10px, 1vw, 15px);
+
+    outline: none;
+
+    transition:
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.textForEmail:focus {
+    border-color: #a23de9;
+
+    box-shadow:
+        0 0 10px rgba(177, 76, 255, 0.25);
 }
 
 .dataLoadingText {
-  height: 1.2vw;
-  font-size: 1.3vw;
+    min-height: 1.5vw;
+
+    color: #555;
+
+    font-size: clamp(14px, 1.3vw, 20px);
+    text-align: center;
 }
-  
+
 .btnSubmit {
-      padding: 1vw;
-      color: black;
-      border-radius: 2vw;
-      font-size: 1.5vw;
-      background-color: #b14cff;
-      border: none;
-      cursor: pointer;
+    padding: clamp(12px, 1vw, 18px) clamp(20px, 2vw, 35px);
+
+    color: #111;
+    background-color: #b14cff;
+
+    border: none;
+    border-radius: clamp(12px, 2vw, 25px);
+
+    font-size: clamp(16px, 1.5vw, 23px);
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(177, 76, 255, 0.2);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
-  
-@media all and (max-width: 768px) {
-  
+
+.btnSubmit:hover {
+    background-color: #a23de9;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(177, 76, 255, 0.3);
+}
+
+.btnSubmit:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .modal {
+        align-items: flex-start;
+        padding: 2vw;
+    }
+
     .modalValue {
-      width: 90vw;
-      margin-top: 2vw;
-      height: 75vw;
-      border-radius: 4vw;
+        width: 90vw;
+        min-height: 75vw;
+
+        margin-top: 2vw;
+        padding: 5vw;
+
+        border-radius: 5vw;
     }
 
-    .modalValue:before {
-      border-radius: 4vw;
-      padding: 0.4vw; 
-    }
-  
     .form {
-      display: flex;
-      height: 68vw;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-  
-    .textToUser {
-      text-align: center;
-    }
-  
-    .normalTextToUser {
-      font-size: 3.5vw;
-    }
-  
-    .smallTextToUser {
-      font-size: 3.5vw;
+        min-height: 65vw;
+        gap: 4vw;
     }
 
+    .normalTextToUser,
+    .smallTextToUser,
     .textToUserToHelp {
-      font-size: 3.5vw;
+        font-size: 3.8vw;
     }
-  
+
     .textForEmail {
-      width: 70vw;
-      height: 20vw;
-      resize: none;
-      font-size: 3.5vw;
+        width: 75vw;
+        height: 20vw;
+
+        padding: 3vw;
+
+        font-size: 3.5vw;
+
+        border-radius: 3vw;
     }
 
     .dataLoadingText {
-      height: 4vw;
-      font-size: 4vw;
+        min-height: 4vw;
+        font-size: 3.5vw;
     }
-  
+
     .btnSubmit {
-      font-size: 3.5vw;
-      padding: 2vw;
-      border-radius: 4vw;
+        padding: 3vw 5vw;
+
+        font-size: 4vw;
+
+        border-radius: 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .modalValue {
+        width: 94vw;
+        min-height: 90vw;
+        padding: 6vw;
+
+        border-radius: 6vw;
+    }
+
+    .form {
+        min-height: 78vw;
+        gap: 5vw;
+    }
+
+    .normalTextToUser,
+    .smallTextToUser,
+    .textToUserToHelp {
+        font-size: 4.2vw;
+    }
+
+    .textForEmail {
+        width: 80vw;
+        height: 28vw;
+
+        font-size: 4vw;
+    }
+
+    .btnSubmit {
+        font-size: 4.5vw;
+        padding: 3.5vw 6vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
     }
 }

@@ -1,521 +1,652 @@
 .main {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    margin-top: 10vw;
+    width: 100%;
+    margin-top: clamp(40px, 10vw, 140px);
+    overflow: hidden;
 }
 
 .content {
-    position: relative; 
-    width: 80%;
-    background-color: rgb(234, 234, 234);
-    border-radius: 2vw;
-}
-
-.purpleBlocks1 {
-    width: 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
     position: relative;
+    z-index: 2;
+    width: min(80%, 1400px);
+    background: rgb(234, 234, 234);
+    border-radius: clamp(20px, 2vw, 35px);
+    box-sizing: border-box;
 }
 
+.purpleBlocks1,
 .purpleBlocks2 {
+    position: relative;
     width: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    position: relative;
+    pointer-events: none;
 }
 
 .purpleBlock {
+    position: relative;
     display: flex;
-    width: 3vw;
-    height: 3vw;
     justify-content: center;
     align-items: center;
-    position: relative;
-    font-size: 2vw;
+    width: clamp(25px, 3vw, 50px);
+    height: clamp(25px, 3vw, 50px);
     color: #b14cff;
+    font-size: clamp(14px, 2vw, 28px);
+    border: 1.5px solid #b14cff;
     text-shadow:
         0 0 8px rgba(177, 76, 255, 0.45),
         0 0 25px rgba(0, 180, 255, 0.18);
-    border: 1.5px #b14cff solid;
-}
-
-.infinityPic {
-    width: 100%;
+    box-shadow:
+        0 0 10px rgba(177, 76, 255, 0.15);
+    will-change: transform;
 }
 
 .aboutAutor {
     display: flex;
-    width: 100%;
+    align-items: center;
     justify-content: space-around;
-    height: 30vw;
-    margin-top: 10vw;
+    gap: clamp(20px, 3vw, 50px);
+    width: 100%;
+    min-height: 30vw;
+    margin-top: clamp(60px, 10vw, 150px);
+    padding: 0 3%;
+    box-sizing: border-box;
 }
 
 .autorDescription {
     display: flex;
-    width: 50%;
-    height: 25vw;
     flex-direction: column;
-    align-items: center;
-    border: 1.5px #b14cff solid;
-    border-radius: 2vw;
     justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    min-height: 25vw;
+    padding: 2vw;
     box-sizing: border-box;
-    background-color: rgb(234, 234, 234);
+    background: rgb(234, 234, 234);
+    border: 1.5px solid #b14cff;
+    border-radius: clamp(20px, 2vw, 35px);
+    box-shadow:
+        0 0 20px rgba(177, 76, 255, 0.06);
 }
 
 .title {
-    font-size: 2vw;
-    text-align: center;
     color: #b14cff;
-
-    text-shadow:
-        0 0 8px rgba(177, 76, 255, 0.45),
-        0 0 25px rgba(0, 180, 255, 0.18);
+    font-size: clamp(22px, 2vw, 32px);
+    line-height: 1.2;
+    text-align: center;
 }
 
 .description {
-    font-size: 1.5vw;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: clamp(16px, 1.5vw, 23px);
+    line-height: 1.6;
     text-align: center;
 }
 
 .slider {
     display: flex;
-    width: 35%;
-    height: 30vw;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    border: 1.5px #b14cff solid;
-    border-radius: 2vw;
-    background-color: rgb(234, 234, 234);
+    width: 35%;
+    min-height: 30vw;
+    padding: 1.5vw;
+    box-sizing: border-box;
+    background: rgb(234, 234, 234);
+    border: 1.5px solid #b14cff;
+    border-radius: clamp(20px, 2vw, 35px);
+    box-shadow:
+        0 0 20px rgba(177, 76, 255, 0.06);
 }
 
 .titleAboutSlider {
-    font-size: 2vw;
     padding: 10px;
-    text-align: center;
     color: #b14cff;
-
-    text-shadow:
-        0 0 8px rgba(177, 76, 255, 0.45),
-        0 0 25px rgba(0, 180, 255, 0.18);
+    font-size: clamp(20px, 2vw, 30px);
+    line-height: 1.3;
+    text-align: center;
 }
 
 .containerOfSlides {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
     padding: 1vw;
+    box-sizing: border-box;
 }
 
 .slide {
     display: flex;
-    width: 20vw;
-    height: 11vw;
     justify-content: center;
+    width: min(20vw, 320px);
+    aspect-ratio: 20 / 11;
 }
 
 .photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1vw;
+    border-radius: clamp(10px, 1vw, 18px);
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
-.next {
-    font-size: 2vw;
+.next,
+.back {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #b14cff;
-    text-shadow:
-        0 0 8px rgba(177, 76, 255, 0.45),
-        0 0 25px rgba(0, 180, 255, 0.18);
-    width: 3vw;
-    height: 5vw;
-    border: 1.5px #b14cff solid;
-    cursor: pointer;
+    width: clamp(35px, 3vw, 55px);
+    height: clamp(50px, 5vw, 75px);
     margin: 1vw;
-    border-radius: 1vw;
+    color: #b14cff;
+    font-size: clamp(24px, 2vw, 34px);
+    border: 1.5px solid #b14cff;
+    border-radius: clamp(10px, 1vw, 18px);
+    cursor: pointer;
+    user-select: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.next:hover,
+.back:hover {
+    color: white;
+    background-color: #b14cff;
+    box-shadow:
+        0 0 15px rgba(177, 76, 255, 0.4);
+}
+
+.next:active {
+    transform: translateY(2px);
 }
 
 .back {
-    font-size: 2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #b14cff;
-    text-shadow:
-        0 0 8px rgba(177, 76, 255, 0.45),
-        0 0 25px rgba(0, 180, 255, 0.18);
-    width: 3vw;
-    height: 5vw;
     transform: rotate(180deg);
-    border: 1.5px #b14cff solid;
-    cursor: pointer;
-    margin: 1vw;
-    border-radius: 1vw;
+}
+
+.back:hover {
+    transform: rotate(180deg) scale(1.03);
 }
 
 .frilance {
-    margin-top: 8vw;
-    height: 60vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 60vw;
+    margin-top: clamp(80px, 8vw, 140px);
+    padding: 0 3%;
+    box-sizing: border-box;
 }
 
-.frilanceTitle {
-    display: flex;
-    justify-content: center;
-}
-
-.frTitle {
-    font-size: 1.5vw;
-    border: 1.5px #b14cff solid;
-    padding: 1.3vw;
-    border-radius: 2vw;
-    text-align: center;
-    background-color: rgb(234, 234, 234);
-}
-
-.aboutTrade {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.trade1 {
-    width: 26vw;
-    border: 1.5px #b14cff solid;
-    border-radius: 2vw;
-    background-color: rgb(234, 234, 234);
-}
-
-.trade2 {
-    width: 26vw;
-    border-radius: 2vw;
-    border: 1.5px #b14cff solid;
-    background-color: rgb(234, 234, 234);
-}
-
-.titleOfTrade {
-    font-size: 2vw;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 2vw;
-    color: #b14cff;
-    text-shadow:
-        0 0 8px rgba(177, 76, 255, 0.45),
-        0 0 25px rgba(0, 180, 255, 0.18);
-}
-
-.descriptionOfTrade {
-    font-size: 1.4vw;
-    text-align: center;
-    padding: 1.5vw;
-}
-
-.price {
-    display: flex;
-    font-size: 1.4vw;
-    justify-content: center;
-    align-items: center;
-    color: green;
-}
-
-.meetAutor {
-    display: flex;
-    justify-content: center;
-}
-
-.meetAutorBtn {
-    padding: 1.3vw;
-    color: black;
-    border-radius: 2vw;
-    font-size: 1.5vw;
-    background-color: #b14cff;
-    border: none;
-    cursor: pointer;
-}
-
-.mainContent {
-    position: relative; 
-    z-index: 2;
-}
-
-.imgModalPlace {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
-
-.imgModal {
-    width: 75vw;
-    height: 45vw;
-}
-
-.imgModalPic {
-    width: 100%;
-    height: 100%;
-}
-
-.portfolio {
-    height: 50vw;
-    margin-top: 10vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
+.frilanceTitle,
 .portfolioTitle {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.frTitle,
 .prtTitle {
-    font-size: 1.5vw;
-    border: 1.5px #b14cff solid;
-    padding: 1.3vw;
-    border-radius: 2vw;
+    padding: clamp(12px, 1.3vw, 22px);
+    font-size: clamp(18px, 1.5vw, 25px);
+    line-height: 1.3;
     text-align: center;
-    background-color: rgb(234, 234, 234);
+    background: rgb(234, 234, 234);
+    border: 1.5px solid #b14cff;
+    border-radius: clamp(15px, 2vw, 30px);
+    box-shadow:
+        0 0 15px rgba(177, 76, 255, 0.05);
+}
+
+.aboutTrade {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(25px, 5vw, 80px);
+}
+
+.trade1,
+.trade2 {
+    display: flex;
+    flex-direction: column;
+    width: min(26vw, 380px);
+    min-height: 25vw;
+    background: rgb(234, 234, 234);
+    border: 1.5px solid #b14cff;
+    border-radius: clamp(20px, 2vw, 35px);
+    overflow: hidden;
+    box-shadow:
+        0 0 20px rgba(177, 76, 255, 0.05);
+}
+
+.titleOfTrade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+    padding: 2vw;
+    color: #b14cff;
+    font-size: clamp(22px, 2vw, 32px);
+    line-height: 1.2;
+    text-align: center;
+    text-shadow:
+        0 0 8px rgba(177, 76, 255, 0.45),
+        0 0 25px rgba(0, 180, 255, 0.18);
+}
+
+.descriptionOfTrade {
+    flex: 1;
+    padding: clamp(15px, 1.5vw, 25px);
+    font-size: clamp(16px, 1.4vw, 22px);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    color: #168b16;
+    font-size: clamp(17px, 1.4vw, 22px);
+    font-weight: 600;
+}
+
+.meetAutor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meetAutorBtn {
+    padding: clamp(14px, 1.3vw, 22px) clamp(20px, 2vw, 35px);
+    color: #111;
+    background: #b14cff;
+    border: none;
+    border-radius: clamp(12px, 2vw, 25px);
+    font-size: clamp(17px, 1.5vw, 24px);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow:
+        0 0 15px rgba(177, 76, 255, 0.2);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.meetAutorBtn:hover {
+    background: #a23de9;
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 25px rgba(177, 76, 255, 0.3);
+}
+
+.meetAutorBtn:active {
+    transform: translateY(0);
+}
+
+.mainContent {
+    position: relative;
+    z-index: 2;
+}
+
+.imgModalPlace {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.65);
+    box-sizing: border-box;
+}
+
+.imgModal {
+    width: min(75vw, 1100px);
+    max-height: 90vh;
+    aspect-ratio: 16 / 9;
+}
+
+.imgModalPic {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.portfolio {
+    margin-top: clamp(80px, 10vw, 160px);
+    padding: 0 3% clamp(60px, 8vw, 120px);
+    box-sizing: border-box;
 }
 
 .portfolioWorks {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    gap: clamp(40px, 5vw, 80px);
+    margin-top: clamp(40px, 5vw, 70px);
+}
+
+.works {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(30px, 5vw, 80px);
+    width: 100%;
 }
 
 .work {
-    width: 25vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .link {
+    display: block;
     text-decoration: none;
+    transition: transform 0.25s ease;
+}
+
+.link:hover {
+    transform: translateY(-5px);
+}
+
+.projectImage {
+    width: 30vw;
+    border-radius: clamp(12px, 1.5vw, 25px);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.link:hover .workContent1,
+.link:hover .workContent2,
+.link:hover .workContent3,
+.link:hover .workContent4 {
+    box-shadow:
+        0 12px 35px rgba(177, 76, 255, 0.2);
 }
 
 .workTitle {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1vw;
-    font-size: 1.7vw;
-    text-align: center;
+    padding: 15px;
     color: #b14cff;
+    font-size: clamp(18px, 1.7vw, 26px);
+    font-weight: 500;
+    text-align: center;
     text-shadow:
         0 0 8px rgba(177, 76, 255, 0.45),
         0 0 25px rgba(0, 180, 255, 0.18);
 }
 
-.workContent1 {
-    width: 30vw;
-    height: 18vw;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url(/src/assets/plansForToday.jpg);
+@media (max-width: 900px) {
+    .content {
+        width: 82%;
+    }
+
+    .aboutAutor {
+        gap: 20px;
+    }
+
+    .autorDescription {
+        width: 52%;
+    }
+
+    .slider {
+        width: 42%;
+    }
+
+    .trade1,
+    .trade2 {
+        width: 38%;
+    }
 }
 
-.workContent2 {
-    width: 30vw;
-    height: 18vw;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url(/src/assets/funChatPhoto.jpg);
-}
-
-@media all and (max-width: 768px) {
-
+@media (max-width: 768px) {
     .main {
         margin-top: 0;
+        align-items: stretch;
     }
 
     .content {
-        background-color: transparent; 
-        border-radius: 4vw;
+        width: 80%;
+        background: transparent;
+        border-radius: 0;
+    }
+
+    .purpleBlocks1,
+    .purpleBlocks2 {
+        width: 10%;
     }
 
     .purpleBlock {
         width: 5vw;
         height: 5vw;
-        font-size: 4vw;
-    }
-
-    .infinityPic {
-        width: 100%;
-    }
-
-    .purpleBlocks1 {
-        align-items: flex-end;
-    }
-    
-    .purpleBlocks2 {
-        align-items: flex-start;
+        font-size: 3.5vw;
     }
 
     .aboutAutor {
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        height: 120vw;
+        gap: 10vw;
+        min-height: auto;
         margin-top: 25vw;
+        padding: 0;
     }
-    
+
     .autorDescription {
-        width: 90%;
-        height: 50vw;
+        width: 100%;
+        min-height: 55vw;
+        padding: 5vw;
         border-radius: 5vw;
     }
-    
+
+    .title {
+        font-size: 5vw;
+    }
+
+    .description {
+        max-width: 95%;
+        font-size: 3.5vw;
+        line-height: 1.5;
+    }
+
     .slider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background-color: transparent; 
+        width: 100%;
+        min-height: auto;
+        padding: 0;
+        background: transparent;
         border: none;
-        border-radius: 5vw;
+        border-radius: 0;
     }
-    
+
+    .titleAboutSlider {
+        width: auto;
+        padding: 2vw;
+        font-size: 5vw;
+    }
+
     .containerOfSlides {
-        display: flex;
-        justify-content: center;
         padding: 3vw;
     }
-    
+
     .slide {
-        width: 50vw;
-        height: 30vw;
+        width: 55vw;
+        aspect-ratio: 5 / 3;
     }
 
     .photo {
         border-radius: 3vw;
     }
 
-    .next {
-        font-size: 8vw;
-        padding: 3vw;
-        border: 0.2vw #b14cff solid;
-        margin: 3vw;
-        border-radius: 2vw;
-    }
-    
+    .next,
     .back {
-        font-size: 8vw;
-        padding: 3vw;
-        transform: rotate(180deg);
-        border: 0.2vw #b14cff solid;
-        cursor: pointer;
+        width: 12vw;
+        height: 14vw;
         margin: 3vw;
+        font-size: 8vw;
+        border-width: 0.2vw;
         border-radius: 2vw;
     }
-    
-    .title {
-        font-size: 5vw;
-        margin-top: 2vw;
-    }
-    
-    .description {
-        font-size: 3.5vw;
-        padding: 1vw;
-    }
-    
-    .titleAboutSlider {
-        font-size: 5vw;
-        width: 30vw;
-    }
-    
+
     .frilance {
-        height: 230vw;
-        margin-top: 50vw;
+        min-height: auto;
+        margin-top: 40vw;
+        padding: 0;
+        gap: 15vw;
     }
-    
-    .frTitle {
+
+    .frTitle,
+    .prtTitle {
         font-size: 3.5vw;
-        padding: 1vw;
+        padding: 2vw;
         border-radius: 4vw;
     }
-    
+
     .aboutTrade {
-        display: flex;
-        align-items: center;
         flex-direction: column;
-        justify-content: space-between;
-        height: 160vw;
+        gap: 10vw;
+        height: auto;
     }
-    
+
     .trade1,
     .trade2 {
-        width: 80%;
+        width: 100%;
+        min-height: 75vw;
         border-radius: 5vw;
     }
-    
+
     .titleOfTrade {
-        padding: 3vw;
+        min-height: auto;
+        padding: 5vw;
         font-size: 5vw;
     }
-    
+
     .descriptionOfTrade {
+        padding: 4vw;
         font-size: 3.5vw;
-        padding: 1.5vw;
+        line-height: 1.6;
     }
 
     .price {
+        min-height: 15vw;
         font-size: 3.5vw;
     }
 
+    .meetAutor {
+        margin-top: 5vw;
+    }
+
     .meetAutorBtn {
+        padding: 3.5vw 5vw;
         font-size: 5vw;
-        padding: 3vw;
         border-radius: 4vw;
     }
 
     .portfolio {
-        height: 70vw;
-        margin-top: 20vw;
+        margin-top: 30vw;
+        padding: 0 0 15vw;
     }
-    
+
+    .portfolioWorks {
+        gap: 12vw;
+        margin-top: 12vw;
+    }
+
+    .works {
+        grid-template-columns: 1fr;
+        gap: 12vw;
+    }
+
     .work {
-        width: 40%;
+        width: 100%;
     }
-    
-    .prtTitle {
-        font-size: 3.5vw;
-        padding: 2.5vw;
-        border-radius: 4vw;
+
+    .projectImage {
+        width: 60vw;
     }
-    
+
     .workTitle {
+        padding: 3vw;
         font-size: 4vw;
     }
 
-    .workContent1 {
-        width: 30vw;
-        height: 18vw;
+    .imgModalPlace {
+        padding: 10px;
     }
-    
-    .workContent2 {
-        width: 30vw;
-        height: 18vw;
+
+    .imgModal {
+        width: 95vw;
+        max-height: 80vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .purpleBlocks1,
+    .purpleBlocks2 {
+        width: 8%;
+    }
+
+    .content {
+        width: 84%;
+    }
+
+    .aboutAutor {
+        margin-top: 20vw;
+    }
+
+    .autorDescription {
+        min-height: 65vw;
+    }
+
+    .description {
+        font-size: 3.8vw;
+    }
+
+    .slide {
+        width: 60vw;
+    }
+
+    .frilance {
+        margin-top: 35vw;
+    }
+
+    .trade1,
+    .trade2 {
+        min-height: 85vw;
+    }
+
+    .meetAutorBtn {
+        font-size: 5.5vw;
+    }
+
+    .portfolio {
+        margin-top: 35vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }
