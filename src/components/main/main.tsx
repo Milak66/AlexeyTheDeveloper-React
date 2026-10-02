@@ -13,7 +13,7 @@ import javaPic from '../../assets/java.jpg';
 import springBoot from '../../assets/springBoot.jpg';
 import project1 from '../../assets/plansForToday.jpg';
 import project2 from '../../assets/funChat.jpg';
-import project3 from '../../assets/clickRace.jpg';
+import project3 from '../../assets/funner.jpg';
 import project4 from '../../assets/translator.jpg';
 
 interface MainProps {} 
