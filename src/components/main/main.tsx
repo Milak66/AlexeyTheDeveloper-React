@@ -417,10 +417,10 @@ const Main: React.FC<MainProps> = () => {
                 </div>
                 <div className="works">
                 <div className="work">
-                <a className="link" href="https://click-race-nine.vercel.app" target="blank">
+                <a className="link" href="https://funner-ai.vercel.app" target="blank">
                 <img className="projectImage" src={project3} alt="" />
                   <div className="workTitle">
-                    Click race
+                    FUNner(AI)
                   </div>
                   </a>
                 </div>
